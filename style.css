@@ -22,13 +22,13 @@ body {
 
 .periodic-table {
   display: grid;
-  grid-gap: 5px;
+  grid-gap: 10px; /* Aumentando o espaço entre os elementos */
   grid-template-columns: repeat(18, 1fr);
 }
 
 .element {
   position: relative;
-  font-size: 0.5vw;
+  font-size: 16px; /* Ajustando o tamanho da fonte */
   padding-bottom: 100%;
   cursor: pointer;
   color: #fff;
@@ -42,7 +42,7 @@ body {
   top: 0;
   bottom: 0;
   background-color: #101318;
-  opacity: 0;
+  opacity: 0.9; /* Ajustando a opacidade da sobreposição */
   pointer-events: none;
   transition: 500ms;
 }
@@ -74,10 +74,10 @@ body {
   transition: 200ms;
 }
 .element .symbol {
-  font-size: 1.7vw;
+  font-size: 30px; /* Aumentando o tamanho do símbolo */
 }
 .element .name {
-  font-size: 0.7vw;
+  font-size: 14px; /* Ajustando o tamanho do nome */
 }
 .element .atomic-mass {
   position: absolute;
@@ -86,9 +86,7 @@ body {
   bottom: 0;
   padding: 2px;
   text-align: right;
-  
 }
-
 
 .element .atomic-fusion {
   position: absolute;
@@ -97,12 +95,9 @@ body {
   bottom: 0;
   padding: 2px;
   text-align: left;
-  font-size: 4px;
+  font-size: 12px; /* Ajustando o tamanho da fusão */
   transform: translateY(-3px);
 }
-
-
-
 
 .element .atomic-boiling {
   position: absolute;
@@ -111,13 +106,9 @@ body {
   bottom: 0;
   padding: 2px;
   text-align: left;
-  font-size: 4px;
+  font-size: 12px; /* Ajustando o tamanho da ebulição */
   transform: translateY(0.2vw);
 }
-
-
-
-
 
 .element .atomic-weight {
   position: absolute;
@@ -149,6 +140,28 @@ body {
   border-radius: 50%;
   opacity: 0.25;
 }
+
+/* Responsividade para dispositivos menores */
+@media screen and (max-width: 600px) {
+  .element {
+    font-size: 18px; /* Ajuste para telas pequenas */
+  }
+  .element .symbol {
+    font-size: 36px;
+  }
+  .element .name {
+    font-size: 16px;
+  }
+  .element .atomic-mass, 
+  .element .atomic-fusion, 
+  .element .atomic-boiling {
+    font-size: 14px;
+  }
+  .periodic-table {
+    grid-gap: 15px; /* Mais espaço em telas pequenas */
+  }
+}
+
 .element .model .orbital:nth-child(1) {
   margin: 10%;
   animation-duration: 40s;
